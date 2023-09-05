@@ -31,21 +31,4 @@ What benefit do we have from having integration tests in our project?
 ```
 Your though here
 ```
-
-@Test
-    public void testCaclulate3() {
-
-        // Make a HTTP GET request to retrieve the last created Parolee.
-        try (Response response = client.target(WEB_URI+"?weight=90&height=1.0").request().get()) {
-
-            // Check that the HTTP response code is 200 OK.
-            int responseCode = response.getStatus();
-            assertEquals(200, responseCode);
-
-            String jsonResponse = response.readEntity(String.class);
-            assertThat(jsonResponse, CoreMatchers.containsString("Result is 90"));
-
-            assertThat(jsonResponse, CoreMatchers.containsString("extremely obese"));
-            _logger.info("IT1 test passed");
-        }
-    }
+We have benefits like improved software quality, faster bug detection, and increased confidence in the reliability of our project.
